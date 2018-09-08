@@ -1,0 +1,51 @@
+<!--<%= @articles.inspect %>-->
+
+<% if !appuser_signed_in?%>
+<span style="color: red">Inicia sesion para eliminar o editar</span>
+<% end %>
+
+<div class="row">
+<% @articles.each do |article|%>
+<%if appuser_signed_in?%>
+<div class="col s12 m12 l6 ">
+    <h6 class="header"><%= link_to article.title,article %>
+   </h6>
+    <div class="card horizontal">
+      <div class="card-image">
+        <!--<img src="../../../images/quad.jpg">-->
+        <%= image_tag("quad.jpg", :alt => "rss feed") %>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p><%= article.body %> </p>
+        </div>
+        <div class="card-action">
+        <%= link_to "eliminar",article, method: :delete %>        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+
+<div class="col s12 m7">
+    <h2 class="header"><%= article.title %>
+   </h2>
+    <div class="card horizontal">
+      <!--<div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      -->
+      <div class="card-stacked">
+        <div class="card-content">
+          <p><%= article.body %> </p>
+        </div>
+        <div class="card-action">
+        <p>Para realizar acciones inicia sesión</p>
+      </div>
+    </div>
+  </div>
+<% end %> 
+
+
+<% end %>
+
+</div>
