@@ -12,5 +12,15 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require materialize
+//= require materialize-sprockets
+//= require materialize/extras/nouislider
+
+
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+})
