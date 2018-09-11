@@ -63,3 +63,6 @@ gem 'material_icons'
 gem 'devise'
 
 gem 'jquery-turbolinks'
+
+
+gem 'rails_12factor', group: :production
